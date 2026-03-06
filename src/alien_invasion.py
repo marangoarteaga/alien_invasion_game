@@ -12,7 +12,7 @@ class AlienInvasion:
 
         pygame.display.set_caption("Alien Invasion")
 
-    def run_game():
+    def run_game(self):
         '''Inicia el bucle principal para el juego'''
         while True:
             '''Busca eventos de teclado y ratón'''
