@@ -12,6 +12,9 @@ class AlienInvasion:
 
         pygame.display.set_caption("Alien Invasion")
 
+        self.bg_color = (230, 230, 230)
+        '''Configura el color de fondo.'''
+
     def run_game(self):
         '''Inicia el bucle principal para el juego'''
         while True:
@@ -19,6 +22,9 @@ class AlienInvasion:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+
+            self.screen.fill(self.bg_color)
+            '''Redibuja la patalla en cada paso por el bucle'''
             pygame.display.flip()
             '''Hace visible la última pantalla dibujada.'''
             self.clock.tick(60)
