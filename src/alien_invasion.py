@@ -24,5 +24,5 @@ class AlienInvasion:
 
 if __name__ == '__main__':
     '''Hace una instancia del juego y lo ejecuta'''
-ai = AlienInvasion()
-ai.run_game()
+    ai = AlienInvasion()
+    ai.run_game()
