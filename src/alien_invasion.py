@@ -2,6 +2,7 @@ import pygame
 import sys
 
 from settings import Settings
+from ship import Ship           #Importamos Ship()
 
 class AlienInvasion:
     '''Clase general para gestionar los recursos y el comportamiento del juego'''
@@ -16,6 +17,9 @@ class AlienInvasion:
 
         pygame.display.set_caption("Alien Invasion")
 
+        self.ship = Ship(self)  #La llamada a Ship() requiere un argumento, una instancia de AlienInvasion
+                                #El parámetro da a Ship acceso a los recursos del juego.
+
     def run_game(self):
         '''Inicia el bucle principal para el juego'''
         while True:
@@ -26,6 +30,9 @@ class AlienInvasion:
 
             self.screen.fill(self.settings.bg_color)
             '''Redibuja la patalla en cada paso por el bucle'''
+
+            self.ship.blitme()  #Dibujamos la nave en la pantalla.
+
             pygame.display.flip()
             '''Hace visible la última pantalla dibujada.'''
             self.clock.tick(60)
