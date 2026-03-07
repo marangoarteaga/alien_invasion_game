@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+from settings import Settings
+
 class AlienInvasion:
     '''Clase general para gestionar los recursos y el comportamiento del juego'''
 
@@ -8,12 +10,11 @@ class AlienInvasion:
         '''Inicializa el juego y crea recursos del juego'''
         pygame.init()
         self.clock = pygame.time.Clock()
-        self.screen = pygame.display.set_mode((1200, 800))
+        self.settings = Settings()
+
+        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
 
         pygame.display.set_caption("Alien Invasion")
-
-        self.bg_color = (230, 230, 230)
-        '''Configura el color de fondo.'''
 
     def run_game(self):
         '''Inicia el bucle principal para el juego'''
@@ -23,7 +24,7 @@ class AlienInvasion:
                 if event.type == pygame.QUIT:
                     sys.exit()
 
-            self.screen.fill(self.bg_color)
+            self.screen.fill(self.settings.bg_color)
             '''Redibuja la patalla en cada paso por el bucle'''
             pygame.display.flip()
             '''Hace visible la última pantalla dibujada.'''
