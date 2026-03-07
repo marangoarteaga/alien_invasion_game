@@ -28,14 +28,14 @@ class AlienInvasion:
                 if event.type == pygame.QUIT:
                     sys.exit()
 
-            self.screen.fill(self.settings.bg_color)
             '''Redibuja la patalla en cada paso por el bucle'''
-
+            self.screen.fill(self.settings.bg_color)
             self.ship.blitme()  #Dibujamos la nave en la pantalla.
 
-            pygame.display.flip()
             '''Hace visible la última pantalla dibujada.'''
+            pygame.display.flip()
             self.clock.tick(60)
+
 
 if __name__ == '__main__':
     '''Hace una instancia del juego y lo ejecuta'''
